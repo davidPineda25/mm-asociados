@@ -1,0 +1,9 @@
+{
+  "name": "mm-asociados",
+  "private": true,
+  "scripts": {
+    "instalar": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently -n API,WEB -c yellow,cyan \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+  },
+  "devDependencies": { "concurrently": "^9.0.1" }
+}
