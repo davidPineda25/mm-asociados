@@ -1,7 +1,11 @@
 {
-  "name": "mm-backend",
+  "name": "mm-asociados",
   "private": true,
-  "type": "module",
-  "scripts": { "dev": "node --watch server.js", "start": "node server.js" },
-  "dependencies": { "cors": "^2.8.5", "dotenv": "^16.4.7", "express": "^4.21.2", "nodemailer": "^6.9.16" }
+  "scripts": {
+    "instalar": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently -n API,WEB -c yellow,cyan \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "build": "npm install --prefix backend && npm install --prefix frontend --include=dev && npm run build --prefix frontend",
+    "start": "npm start --prefix backend"
+  },
+  "devDependencies": { "concurrently": "^9.0.1" }
 }
